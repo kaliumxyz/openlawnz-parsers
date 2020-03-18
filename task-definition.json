@@ -1,0 +1,77 @@
+{
+    "ipcMode": "task",
+    "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ROLE_NAME",
+    "containerDefinitions": [
+        {
+            "name": "<REPO_NAME>",
+            "image": "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/<REPO_NAME>:latest",
+            "dnsSearchDomains": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": [],
+                "options": {
+                    "awslogs-group": "/ecs/openlawnz",
+                    "awslogs-region": "ap-southeast-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": [],
+            "portMappings": [{
+                "hostPort": 0,
+                "protocol": "tcp",
+                "containerPort": 80
+            }],
+            "command": [],
+            "linuxParameters": [],
+            "environment": [],
+            "secrets": [
+                {
+                    "name": "DB_NAME",
+                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_NAME"
+                },
+                {
+                    "name": "DB_HOST",
+                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_HOST"
+                },
+                {
+                    "name": "DB_USER",
+                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_USER"
+                },
+                {
+                    "name": "DB_PASS",
+                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_PASS"
+                },
+                {
+                    "name": "PORT",
+                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/PORT"
+                }
+            ],
+            "resourceRequirements": [],
+            "ulimits": [],
+            "dnsServers": [],
+            "mountPoints": [],
+            "dockerSecurityOptions": [],
+            "memoryReservation": 256,
+            "volumesFrom": [],
+            "stopTimeout": 2,
+            "startTimeout": 2,
+            "dependsOn": [],
+            "workingDirectory": "/usr/src/app",
+            "interactive": true,
+            "essential": true,
+            "links": [],
+            "pseudoTerminal": true,
+            "cpu": 256,
+            "memory": 256
+        }
+    ],
+    "placementConstraints": [],
+    "family": "openlawnz",
+    "pidMode": "task",
+    "requiresCompatibilities": ["EC2"],
+    "networkMode": "bridge",
+    "inferenceAccelerators": [],
+    "volumes": [],
+    "memory": "512",
+    "cpu": "512"
+}
