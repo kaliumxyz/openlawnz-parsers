@@ -9,6 +9,7 @@
     "parser": "yarn test && cd parser && node index.js --env=local",
     "debug": "node parseCaseToCase.js --env=dev",
     "resetCases": "cd parser && node _resetCases.js --env=dev",
+    "parseInvalidCharacters": "cd parser && node parseInvalidCharacters.js --env=dev",
     "parseCasesCitations": "cd parser && node parseCasesCitations.js --env=dev",
     "parseCaseToCase": "cd parser && node parseCaseToCase.js --env=dev",
     "parseCourts": "cd parser && node parseCourts.js --env=dev",
