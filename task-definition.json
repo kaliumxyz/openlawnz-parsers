@@ -1,6 +1,6 @@
 {
     "ipcMode": "task",
-    "executionRoleArn": "arn:aws:iam::873498996602:role/ROLE_NAME",
+    "executionRoleArn": "arn:aws:iam::873498996602:role/service-role",
     "containerDefinitions": [
         {
             "name": "parser_cloud",
