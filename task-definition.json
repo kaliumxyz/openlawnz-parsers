@@ -1,17 +1,17 @@
 {
     "ipcMode": "task",
-    "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ROLE_NAME",
+    "executionRoleArn": "arn:aws:iam::873498996602:role/service-role",
     "containerDefinitions": [
         {
-            "name": "<REPO_NAME>",
-            "image": "<ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/<REPO_NAME>:latest",
+            "name": "parser-cloud",
+            "image": "873498996602.dkr.ecr.eu-west-2.amazonaws.com/parser-cloud:latest",
             "dnsSearchDomains": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "secretOptions": [],
                 "options": {
                     "awslogs-group": "/ecs/openlawnz",
-                    "awslogs-region": "ap-southeast-2",
+                    "awslogs-region": "eu-west-2",
                     "awslogs-stream-prefix": "ecs"
                 }
             },
@@ -27,23 +27,23 @@
             "secrets": [
                 {
                     "name": "DB_NAME",
-                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_NAME"
+                    "valueFrom": "arn:aws:ssm:eu-west-2:873498996602:parameter/DB_NAME"
                 },
                 {
                     "name": "DB_HOST",
-                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_HOST"
+                    "valueFrom": "arn:aws:ssm:eu-west-2:873498996602:parameter/DB_HOST"
                 },
                 {
                     "name": "DB_USER",
-                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_USER"
+                    "valueFrom": "arn:aws:ssm:eu-west-2:873498996602:parameter/DB_USER"
                 },
                 {
                     "name": "DB_PASS",
-                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/DB_PASS"
+                    "valueFrom": "arn:aws:ssm:eu-west-2:873498996602:parameter/DB_PASS"
                 },
                 {
                     "name": "PORT",
-                    "valueFrom": "arn:aws:ssm:ap-southeast-2:<ACCOUNT_ID>:parameter/PORT"
+                    "valueFrom": "arn:aws:ssm:eu-west-2:873498996602:parameter/PORT"
                 }
             ],
             "resourceRequirements": [],
