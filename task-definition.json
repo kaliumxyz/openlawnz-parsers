@@ -3,8 +3,8 @@
     "executionRoleArn": "arn:aws:iam::873498996602:role/ROLE_NAME",
     "containerDefinitions": [
         {
-            "name": "parser-cloud",
-            "image": "873498996602.dkr.ecr.eu-west-2.amazonaws.com/parser-cloud:latest",
+            "name": "parser_cloud",
+            "image": "873498996602.dkr.ecr.eu-west-2.amazonaws.com/parser_cloud:latest",
             "dnsSearchDomains": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
