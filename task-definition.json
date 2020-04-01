@@ -17,7 +17,7 @@
             },
             "entryPoint": [],
             "portMappings": [{
-                "hostPort": 0,
+                "hostPort": 80,
                 "protocol": "tcp",
                 "containerPort": 80
             }],
@@ -69,7 +69,7 @@
     "family": "openlawnz",
     "pidMode": "task",
     "requiresCompatibilities": ["EC2"],
-    "networkMode": "bridge",
+    "networkMode": "awsvpc",
     "inferenceAccelerators": [],
     "volumes": [],
     "memory": "512",
