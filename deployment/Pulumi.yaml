@@ -1,0 +1,10 @@
+name: openlawnz-parsers
+runtime: nodejs
+description: deploy parsers to AWS
+template:
+  config:
+    aws:region:
+      description: The AWS region to deploy into
+      default: ap-southeast-1
+    aws:account:
+      description: The domain to serve the website at (e.g. www.example.com)
